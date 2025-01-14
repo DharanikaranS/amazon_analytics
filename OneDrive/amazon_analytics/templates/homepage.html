@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsightMart - Your Smart Shopping Companion</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <span class="hamburger-btn material-symbols-rounded">menu</span>
+            <a href="#" class="logo">
+                <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="logo">
+                <h2>InsightMart</h2>
+            </a>
+            <ul class="links">
+                <span class="close-btn material-symbols-rounded">close</span>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#popular-products">Popular Products</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+            <button class="login-btn">LOG IN</button>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="home-section">
+        <div class="home-content">
+            <h1>Welcome to InsightMart</h1>
+            <p>Your one-stop platform for the best deals, exclusive discounts, and curated products.</p>
+            <a href="#popular-products" class="cta-button">Explore Now</a>
+        </div>
+    </section>
+
+    <!-- Popular Products Section -->
+    <section id="popular-products" class="popular-products-section">
+        <h2>Popular Products</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="{{ url_for('static', filename='images/photo.jpg') }}"  alt="Product 1">
+                <h3>Mobiles</h3>
+                <p>Focuses on market trends, customer preferences, and product analysis within the mobile phone sector.</p>
+            </div>
+            <div class="product-card2">
+                <img src="{{ url_for('static', filename='images/photo2.avif') }}" alt="Product 2">
+                <h3>Laptops</h3>
+                <p> Highlights the analysis of sales, customer behavior, and performance metrics for laptops.</p>
+            </div>
+            <div class="product-card3">
+                <img src="{{ url_for('static', filename='images/photo3.jpg') }}" alt="Product 3">
+                <h3>Clothes</h3>
+                <p>Emphasizes tracking fashion trends, sales performance, and seasonality in the clothing industry.</p>
+            </div>
+        </div>
+    </section>
+
+<!-- Features Section -->
+<section id="features" class="features-section">
+    <h2>Features</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+           
+            <h3>Product Finder</h3>
+            <p>Find the best products based on performance, price, and customer reviews. Leverage data to make informed purchasing decisions.</p>
+            <span class="tags">Product Search, Market Trends, Consumer Insights, Data Analytics</span>
+        </div>
+        <div class="feature-card">
+            
+            <h3>Brand Performance</h3>
+            <p>Analyze the performance of various brands in terms of sales, customer feedback, and market dominance.</p>
+            <span class="tags">Brand Analysis, Sales Insights, Consumer Sentiment, Market Share</span>
+        </div>
+        <div class="feature-card">
+          
+            <h3>Products with High Discounts</h3>
+            <p>Discover products that offer the best value with significant discounts. Track pricing strategies and sales trends.</p>
+            <span class="tags">Discount Tracking, Product Deals, Price Analysis, Sales Insights</span>
+        </div>
+        
+    </div>
+</section>
+
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Reach out to us anytime. We’re here to help!</p>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:contact@insightmart.com">ecommerceanalytics117.com</a></p>
+            <p>Phone: 7904548485</p>
+        </div>
+    </section>
+
+    <!-- Login and Signup Popup -->
+    <div class="blur-bg-overlay"></div>
+    <div class="form-popup">
+        <span class="close-btn material-symbols-rounded">close</span>
+        <div class="form-box login">
+            <div class="form-details">
+                <h2>Welcome Back</h2>
+                <p>Log in with your personal information to stay connected.</p>
+            </div>
+            <div class="form-content">
+                <h2>LOGIN</h2>
+                <form action="{{ url_for('login') }}" method="POST">
+                    <div class="input-field">
+                        <input type="text" name="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" name="password" required>
+                        <label>Password</label>
+                    </div>
+                    <button type="submit">Log In</button>
+                </form>
+                
+                <div class="bottom-link">
+                    Don't have an account? <a href="#" id="signup-link">Signup</a>
+                </div>
+            </div>
+        </div>
+        <div class="form-box signup">
+            <div class="form-details">
+                <h2>Create Account</h2>
+                <p>Join InsightMart by signing up with your information.</p>
+            </div>
+            <div class="form-content">
+                <h2>SIGNUP</h2>
+                <form action="{{ url_for('signup') }}" method="POST">
+                    <div class="input-field">
+                        <input type="text" name="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" name="password" required>
+                        <label>Password</label>
+                    </div>
+                    <button type="submit">Sign Up</button>
+                </form>
+                
+                <div class="bottom-link">
+                    Already have an account? <a href="#" id="login-link">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsightMart Dashboard</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard-style.css') }}">
+    <style>
+        /* Custom CSS for the table */
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px 20px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: 600;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .table-container {
+            margin: 40px auto;
+            width: 90%;
+            max-width: 1200px;
+        }
+        /* Responsive table styles */
+        @media screen and (max-width: 768px) {
+            table {
+                width: 100%;
+            }
+            th, td {
+                padding: 8px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar and other content here -->
+
+        <!-- Main Dashboard Content -->
+        <main class="dashboard-content">
+            <!-- Product Filter Section -->
+            
+
+            <!-- Product Filter Results -->
+            <section id="filtered-products">
+                <h2>Filtered Products</h2>
+                <div class="table-container">
+                    <table id="filtered-products-table">
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Brand</th>
+                            <th>Price (₹)</th>
+                            <th>Rating</th>
+                            <th>Discount</th>
+                        </tr>
+                        {% for product in products %}
+                        <tr>
+                            <td>{{ product.product_name }}</td>
+                            <td>{{ product.brand }}</td>
+                            <td>₹{{ product.current_price }}</td>
+                            <td>{{ product.rating }} Stars</td>
+                            <td>{{ ((product['retail_price'] - product['current_price']) * 100 / product['retail_price']) | round(2) }}%</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

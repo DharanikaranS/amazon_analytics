@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsightMart Dashboard</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard-style.css') }}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="user-info">
+                <img src="{{ url_for('static', filename='images/profile.png') }}" alt="Common Logo" class="user-logo">
+                <p class="username">{{ username }}</p>
+                
+            </div>
+            <nav class="dashboard-nav">
+                <ul>
+                    <li><a href="#product-selection">Select Product</a></li>
+                    <li><a href="#total">Total Products</a></li>
+                </ul>
+            </nav>
+            <a href="{{ url_for('logout') }}" class="logout-button">Logout</a>
+        </aside>
+        <!-- Main Dashboard Content -->
+        <main class="dashboard-content1">
+            <section id="product-selection">
+                <h2>Product Categories</h2>
+                <ul class="product-categories">
+                    <ul class="product-categories">
+                        <li><a href="{{ url_for('product_dashboard', category='MobilePhones') }}">Mobile Phones</a></li>
+                        <li><a href="{{ url_for('product_dashboard', category='laptop') }}">Laptops</a></li>
+                        <li><a href="{{ url_for('product_dashboard', category='camera') }}">Cameras</a></li>
+                        <li><a href="{{ url_for('product_dashboard', category='clothing') }}">clothing</a></li>
+                        <li><a href="{{ url_for('product_dashboard', category='sneaker') }}">Sneakers</a></li>
+                    </ul>
+                    
+                </ul>
+            </section><BR><BR>
+            
+            <section id="total" class="popular-products-section">
+                <h2>Products</h2>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="{{ url_for('static', filename='images/photo.jpg') }}"  alt="Product 1">
+                        <h3>MobilePhones</h3>
+                        <p>Total number of MobilePhones scrapped={{mobile}}</p>
+                    </div>
+                    <div class="product-card2">
+                        <img src="{{ url_for('static', filename='images/photo2.avif') }}" alt="Product 2">
+                        <h3>Laptops</h3>
+                        <p>Total number of Laptops scrapped={{laptop}}</p>
+                    </div>
+                    <div class="product-card3">
+                        <img src="{{ url_for('static', filename='images/cam.jpg') }}" alt="Product 3">
+                        <h3>Cameras</h3>
+                        <p>Total number of Cameras scrapped={{camera}}</p>
+                    </div>
+                </div>
+            </section>
+            <section id="popular-products" class="popular-products-section">
+            
+                <div class="products-grid">
+                    
+                    <div class="product-card2">
+                        <img src="{{ url_for('static', filename='images/photo3.jpg') }}" alt="Product 2">
+                        <h3>clothing</h3>
+                        <p>Total number of clothes scrapped={{clothing}}</p>
+                    </div>
+                    <div class="product-card3">
+                        <img src="{{ url_for('static', filename='images/Sneakers.jpg') }}" alt="Product 3">
+                        <h3>Sneakers</h3>
+                        <p>Total number of Sneakers scrapped={{sneaker}}</p>
+                    </div>
+                </div>
+            </section>
+        
+        </main>
+    </div>
+</body>
+</html>
