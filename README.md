@@ -110,7 +110,7 @@ python3 app.py
 ## 👤 Author
 
 **Dharanikaran S**  
-🎓 B.Tech Information Technology 
+🎓 B.Tech Information Technology         
 🏫 SSN College of Engineering, Tamil Nadu  
 📧 dharanikarans27@email.com  
 🔗 [LinkedIn](https://www.linkedin.com/in/dharanikaran-s-229b55303/)  
